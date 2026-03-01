@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BIOLOGY</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav>
+      <a href="index.html">Home</a>
+      <li><a href="biology.html">Biology</a></li>
+      <li><a href="math.html">Mathematics</a></li>
+      <li><a href="Physics.html">Physics</a></li>
+      <li><a href="Chemistry.html">Chemistry</a></li>
+      <li><a href="payment.html">Payment Information</a></li>
+    </nav>
+    <button onclick="copyAll()" class="copy-all">Copy All Questions</button>
+    <button onclick="adminMode()">Admin Mode</button>
+    <p>Copy questions and practice</p>
+    <input
+      type="text"
+      id="search"
+      placeholder="Search questions..."
+      onkeyup="searchQuestions()"
+    />
+    <h2>Year - 2026</h2>
+
+    <div class="question-box">
+      <h5>Biology – Cell Biology</h5>
+      <p id="b1">Describe the structure of a plant cell.</p>
+      <button onclick="copyText('b1')">Copy</button>
+    </div>
+
+    <div class="question-box">
+      <h5>Biology – Genetics</h5>
+      <p id="b2">Define variation and state its importance.</p>
+      <button onclick="copyText('b2')">Copy</button>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

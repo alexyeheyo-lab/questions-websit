@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MATHEMATICS</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav>
+      <a href="index.html">Home</a>
+      <li><a href="biology.html">Biology</a></li>
+      <li><a href="math.html">Mathematics</a></li>
+      <li><a href="Physics.html">Physics</a></li>
+      <li><a href="Chemistry.html">Chemistry</a></li>
+      <li><a href="payment.html">Payment Information</a></li>
+    </nav>
+    <button onclick="copyAll()" class="copy-all">Copy All Questions</button>
+    <button onclick="adminMode()">Admin Mode</button>
+    <p>Copy questions and practice</p>
+    <input
+      type="text"
+      id="search"
+      placeholder="Search questions..."
+      onkeyup="searchQuestions()"
+    />
+    <h2>Year - 2026</h2>
+    <div class="question-box">
+      <h5>Algebra</h5>
+      <p id="q1">Solve for x: 2x + 5 = 15</p>
+      <button onclick="copyText('q1')">Copy</button>
+    </div>
+
+    <div class="question-box">
+      <h5>Geometry</h5>
+      <p id="q2">Simplify: (x + 3)(x - 2)</p>
+      <button onclick="copyText('q2')">Copy</button>
+    </div>
+
+    <div class="unlock-box">
+      <h3>🔓 Unlock Full Access</h3>
+      <p>Choose how you want to access:</p>
+
+      <button onclick="unlockPaid()">🔓 Enter Access Code</button>
+      <br /><br />
+      <a
+        href="https://wa.me/256763526076?text=Hello%20I%20want%20to%20pay%20for%20UCE%202023%20Maths"
+        target="_blank"
+      >
+        <button style="background: #25d366">
+          💬 Pay via WhatsApp (Get PDF)
+        </button>
+      </a>
+    </div>
+
+    <div class="paid locked">
+      <h2>UCE Mathematics – 2023 (FULL PAPER)</h2>
+
+      <div class="question-box">
+        <p id="p1">Find the value of x in 3x − 7 = 11</p>
+        <button onclick="copyText('p1')">Copy</button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
