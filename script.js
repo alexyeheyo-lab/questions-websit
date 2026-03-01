@@ -52,10 +52,19 @@ function adminMode() {
 
 function unlockPaid() {
   const code = prompt("Enter access code:");
+
+  if (!code) {
+    alert("No code entered");
+    return;
+  }
+
   let unlocked = false;
+  const cleanCode = code.trim().toUpperCase();
 
   document.querySelectorAll(".paid").forEach(section => {
-    if (section.dataset.code === code) {
+    const sectionCode = section.dataset.code;
+
+    if (sectionCode && sectionCode.toUpperCase() === cleanCode) {
       section.classList.remove("locked");
       unlocked = true;
     }
