@@ -38,14 +38,17 @@ function adminMode() {
   const pass = prompt("Admin password:");
 
   if (pass === "ADMIN123") {
-    document.querySelectorAll(".question-box").forEach(box => {
-      box.classList.toggle("admin");
+    document.querySelectorAll(".question-box p, .paid p").forEach(el => {
+      el.contentEditable = el.contentEditable !== "true";
+      el.style.background = "#fff9c4";
     });
-    alert("Admin mode activated");
+
+    alert("Admin edit mode toggled.\nClick text to edit.");
   } else {
     alert("Access denied");
   }
 }
+
 
 function unlockPaid() {
   const code = prompt("Enter access code:");
@@ -64,3 +67,6 @@ function unlockPaid() {
     alert("Invalid code. Please pay to get access.");
   }
 }
+
+
+

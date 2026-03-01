@@ -130,3 +130,35 @@ button:hover {
   border-radius: 10px;
   margin-bottom: 20px;
 }
+
+
+
+.locked {
+  filter: blur(6px);
+  pointer-events: none;
+}
+
+.unlock-box {
+  background: #fff3cd;
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+hr {
+  margin: 30px 0;
+}
+
+.info {
+  background: #d1ecf1;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #bee5eb;
+  margin-bottom: 20px;
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
