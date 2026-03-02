@@ -162,3 +162,20 @@ hr {
   top: 0;
   z-index: 1000;
 }
+
+form {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  max-width: 500px;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+textarea {
+  height: 100px;
+}

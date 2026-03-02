@@ -50,19 +50,6 @@
       <button onclick="copyText('m2')">Copy</button>
     </div>
 
-    <!-- 🔒 PAID ANSWERS -->
-    <div class="paid locked" data-code="MATH23">
-      <h3>✅ Mathematics Answers (PAID)</h3>
-
-      <div class="question-box">
-        <p>Answer 1: x = 5</p>
-      </div>
-
-      <div class="question-box">
-        <p>Answer 2: x² + x − 6</p>
-      </div>
-    </div>
-
     <hr />
 
     <!-- ================= BIOLOGY ================= -->
@@ -73,44 +60,46 @@
       <button onclick="copyText('b1')">Copy</button>
     </div>
 
-    <div class="paid locked" data-code="BIO23">
-      <h3>✅ Biology Answers (PAID)</h3>
+    <h3>✅ Biology Answers (PAID)</h3>
 
-      <div class="question-box">
-        <p>A plant cell has a cell wall, nucleus, chloroplasts…</p>
-      </div>
+    <div class="question-box">
+      <p>A plant cell has a cell wall, nucleus, chloroplasts…</p>
     </div>
 
     <hr />
 
-    <!-- PAYMENT INFO -->
-    <div class="unlock-box">
-      <h3>💳 Get Full Access</h3>
+    <h2>👨‍🏫 Teacher Contribution</h2>
+    <p>Teachers can submit questions for students.</p>
 
-      <p><strong>Option 1: Instant Website Access</strong></p>
-      <ul>
-        <li>Pay UGX 1,000 per subject</li>
-        <li>UGX 3,000 for all subjects</li>
-        <li>Receive an access code</li>
-      </ul>
+    <form id="teacherForm">
+      <input
+        type="text"
+        id="teacherName"
+        placeholder="Teacher name"
+        required
+      /><br /><br />
 
-      <p><strong>Option 2: WhatsApp + PDF</strong></p>
-      <a
-        href="https://wa.me/256763526076?text=Hello%20I%20want%20UCE%20questions%20and%20answers"
-        target="_blank"
-      >
-        <button style="background: #25d366">💬 Pay via WhatsApp</button>
-      </a>
-    </div>
-    <div class="unlock-box">
-      <h3>Why Students Pay for This</h3>
-      <ul>
-        <li>✔ Verified answers</li>
-        <li>✔ Saves revision time</li>
-        <li>✔ Used by top candidates</li>
-        <li>✔ Affordable (UGX 3,000 only)</li>
-      </ul>
-    </div>
+      <select id="subject" required>
+        <option value="">Select subject</option>
+        <option>Mathematics</option>
+        <option>Biology</option>
+        <option>Physics</option>
+        <option>Chemistry</option></select
+      ><br /><br />
+
+      <textarea
+        id="questionText"
+        placeholder="Enter question here"
+        required
+      ></textarea
+      ><br /><br />
+
+      <button type="submit">Submit Question</button>
+    </form>
+
+    <p><em>Note: Questions appear after admin approval.</em></p>
+
+    <div id="pending"></div>
 
     <script src="script.js"></script>
   </body>

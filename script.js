@@ -37,45 +37,62 @@ function searchQuestions() {
 function adminMode() {
   const pass = prompt("Admin password:");
 
-  if (pass === "ADMIN123") {
-    document.querySelectorAll(".question-box p, .paid p").forEach(el => {
-      el.contentEditable = el.contentEditable !== "true";
-      el.style.background = "#fff9c4";
-    });
-
-    alert("Admin edit mode toggled.\nClick text to edit.");
-  } else {
+  if (pass !== "ADMIN_2026") {
     alert("Access denied");
-  }
-}
-
-
-function unlockPaid() {
-  const code = prompt("Enter access code:");
-
-  if (!code) {
-    alert("No code entered");
     return;
   }
 
-  let unlocked = false;
-  const cleanCode = code.trim().toUpperCase();
+  const pendingDiv = document.getElementById("pending");
+  pendingDiv.innerHTML = "<h3>Pending Questions</h3>";
 
-  document.querySelectorAll(".paid").forEach(section => {
-    const sectionCode = section.dataset.code;
+  const submissions = JSON.parse(localStorage.getItem("submissions")) || [];
 
-    if (sectionCode && sectionCode.toUpperCase() === cleanCode) {
-      section.classList.remove("locked");
-      unlocked = true;
+  submissions.forEach((item, index) => {
+    if (!item.approved) {
+      const div = document.createElement("div");
+      div.className = "question-box";
+
+      div.innerHTML = `
+        <strong>${item.subject}</strong><br>
+        ${item.question}<br>
+        <em>By ${item.teacher}</em><br><br>
+        <button onclick="approveQuestion(${index})">Approve</button>
+      `;
+
+      pendingDiv.appendChild(div);
     }
   });
 
-  if (unlocked) {
-    alert("Access unlocked!");
-  } else {
-    alert("Invalid code. Please pay to get access.");
-  }
+  alert("Admin mode active");
 }
 
 
+// Handle teacher submissions
+document.getElementById("teacherForm")?.addEventListener("submit", function (e) {
+  e.preventDefault();
 
+  const submission = {
+    teacher: teacherName.value,
+    subject: subject.value,
+    question: questionText.value,
+    approved: false
+  };
+
+  const submissions = JSON.parse(localStorage.getItem("submissions")) || [];
+  submissions.push(submission);
+  localStorage.setItem("submissions", JSON.stringify(submissions));
+
+  alert("Question submitted for approval.");
+  this.reset();
+});
+
+
+
+
+function approveQuestion(index) {
+  const submissions = JSON.parse(localStorage.getItem("submissions"));
+  submissions[index].approved = true;
+  localStorage.setItem("submissions", JSON.stringify(submissions));
+
+  alert("Question approved. Refresh page.");
+}
