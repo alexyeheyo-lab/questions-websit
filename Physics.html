@@ -4,19 +4,30 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PHYSICS</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="subjects/style.css" />
   </head>
   <body>
     <nav class="navbar">
-      <a href="index.html">Home</a>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="questions.html">Questions</a></li>
       <li><a href="biology.html">Biology</a></li>
       <li><a href="math.html">Mathematics</a></li>
-      <li><a href="Physics.html">Physics</a></li>
-      <li><a href="Chemistry.html">Chemistry</a></li>
-      <li><a href="payment.html">Payment Information</a></li>
+      <li><a href="physics.html">Physics</a></li>
+      <li><a href="chemistry.html">Chemistry</a></li>
     </nav>
-    <button onclick="copyAll()" class="copy-all">Copy All Questions</button>
+    <strong>📘 Questions Hub</strong>
+    </nav>
+    <hr />
+    <p class="info">New questions every week!</p>
+
+    <h1>UCE & Past & New Questions</h1>
+    <p>Practice smart. Pay once. Succeed.</p>
+
+    <button onclick="unlockPaid()">🔓 Enter Access Code</button>
     <button onclick="adminMode()">Admin Mode</button>
+
+    <button onclick="copyAll()" class="copy-all">Copy All Questions</button>
+    
     <p>Copy questions and practice</p>
     <input
       type="text"
